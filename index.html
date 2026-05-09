@@ -3,52 +3,47 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NirVana Pilates · Design System</title>
+<title>NirVana Vital · Design System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=DM+Sans:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
-   TOKENS · NirVana Pilates Design System v1.0
+   TOKENS · NirVana Vital v1.0
    ============================================================ */
 :root {
-  /* Brand */
-  --brand-primary: #B8995A;
-  --brand-primary-soft: #D4BD8A;
-  --brand-primary-deep: #8C7035;
-  --brand-glow: rgba(184,153,90,0.10);
-  --brand-glow-strong: rgba(184,153,90,0.20);
+  /* Brand colors */
+  --terracota: #C2613D;
+  --terracota-deep: #9C4828;
+  --terracota-soft: #E8A88C;
+  --coral: #F5A088;
+  --coral-soft: #FBC9B6;
+  --mostaza: #E8B547;
+  --mostaza-soft: #F4D898;
+  --menta: #9CB89E;
+  --menta-soft: #C8D8C8;
+  --ciruela: #8B5A6B;
+  --ciruela-soft: #C9A6B0;
 
-  /* Neutral */
-  --bg: #F5EFE4;
-  --bg-alt: #EBE2D2;
-  --bg-card: #FFFCF6;
-  --bg-editorial: #F0E8D8;
-  --border: #D8CDB8;
-  --border-light: #E5DCC8;
-  --text: #2A2520;
-  --text-dim: #6B5F4E;
-  --text-muted: #A89980;
-
-  /* Earth */
-  --tier1: #E8DCC8;
-  --tier2: #C9B591;
-  --tier3: #9A7F5C;
-  --tier4: #5C4632;
-  --tier5: #2E2218;
-
-  /* Atmosphere */
-  --moon-gold: #D4B062;
-  --dusk-rose: #C9A89A;
-  --mist: #D5CFC2;
-  --deep-night: #1F1810;
+  /* Neutrals */
+  --bg: #FAF3E7;
+  --bg-alt: #F2E8D5;
+  --bg-card: #FFFAF0;
+  --bg-warm: #F5DCC4;
+  --border: #D8C5A8;
+  --border-light: #E8DCC4;
+  --text: #3D2817;
+  --text-dim: #7A5C42;
+  --text-muted: #A89074;
 
   /* Typography */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-accent: 'Caveat', cursive;
   --font-mono: 'JetBrains Mono', monospace;
 
+  /* Sizes */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -59,103 +54,80 @@
   --text-3xl: 3.5rem;
   --text-4xl: 5rem;
 
-  --tracking-tighter: -0.03em;
-  --tracking-tight: -0.01em;
-  --tracking-wider: 0.1em;
-  --tracking-widest: 0.2em;
-
   /* Space */
   --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
   --space-4: 1rem; --space-5: 1.5rem; --space-6: 2rem;
   --space-7: 2.5rem; --space-8: 3rem; --space-9: 4rem;
-  --space-10: 5rem; --space-11: 6rem; --space-12: 8rem;
+  --space-10: 5rem;
 
   /* Radius */
-  --radius-sm: 4px; --radius: 8px; --radius-md: 12px;
-  --radius-lg: 16px; --radius-xl: 24px; --radius-pill: 9999px;
+  --radius-sm: 4px; --radius: 8px; --radius-md: 16px;
+  --radius-lg: 24px; --radius-xl: 32px; --radius-pill: 9999px;
 
   /* Shadow */
-  --shadow-subtle: 0 2px 8px rgba(140,112,53,0.06);
-  --shadow-soft: 0 8px 20px rgba(140,112,53,0.10);
-  --shadow-medium: 0 12px 32px rgba(140,112,53,0.14);
-  --shadow-strong: 0 24px 60px rgba(46,34,24,0.20);
-  --shadow-glow: 0 0 40px rgba(212,176,98,0.30);
+  --shadow-subtle: 0 2px 6px rgba(156,72,40,0.08);
+  --shadow-soft: 0 6px 16px rgba(156,72,40,0.12);
+  --shadow-medium: 0 12px 28px rgba(156,72,40,0.16);
+  --shadow-strong: 0 20px 40px rgba(156,72,40,0.22);
+  --shadow-playful: 4px 4px 0 rgba(156,72,40,0.85);
 
   /* Motion */
-  --duration-fast: 200ms;
-  --duration-base: 350ms;
-  --duration-slow: 600ms;
-  --duration-languid: 1200ms;
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-breathe: cubic-bezier(0.45, 0, 0.55, 1);
-
-  /* Layout */
-  --max-prose: 65ch;
-  --max-default: 1100px;
-  --max-wide: 1280px;
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* ============================================================
    RESET & BASE
    ============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  font-weight: 400;
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a { color: var(--brand-primary-deep); text-decoration: none; transition: color var(--duration-fast) var(--ease); }
-a:hover { color: var(--brand-primary); }
+a { color: var(--terracota-deep); text-decoration: none; transition: color 200ms var(--ease); }
+a:hover { color: var(--terracota); }
 
 /* ============================================================
    APP HEADER
    ============================================================ */
 .app-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(245, 239, 228, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(250, 243, 231, 0.92);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-light);
   padding: var(--space-4) var(--space-7);
   display: flex; align-items: center; justify-content: space-between;
-  gap: var(--space-4); flex-wrap: wrap;
+  flex-wrap: wrap; gap: var(--space-4);
 }
 .app-logo {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--text-md);
-  color: var(--text);
-  letter-spacing: var(--tracking-tight);
+  color: var(--terracota-deep);
+  letter-spacing: -0.01em;
 }
-.app-logo span {
-  color: var(--brand-primary);
+.app-logo .accent {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 1.4em;
+  color: var(--coral);
   font-style: normal;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: var(--text-sm);
-  letter-spacing: var(--tracking-widest);
-  text-transform: uppercase;
-  margin-left: var(--space-3);
-  padding-left: var(--space-3);
-  border-left: 1px solid var(--border);
+  margin: 0 0.2em;
+  display: inline-block;
+  transform: rotate(-3deg) translateY(2px);
 }
 .app-version {
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--text-muted);
-  font-family: var(--font-mono);
   margin-left: var(--space-3);
-}
-.app-meta {
-  display: flex; align-items: center; gap: var(--space-3);
 }
 
 /* ============================================================
@@ -164,43 +136,39 @@ a:hover { color: var(--brand-primary); }
 .layout {
   display: grid;
   grid-template-columns: 240px 1fr;
-  max-width: var(--max-wide);
+  max-width: 1280px;
   margin: 0 auto;
 }
 .side-nav {
   position: sticky; top: 80px;
   height: calc(100vh - 80px);
   overflow-y: auto;
-  padding: var(--space-7) var(--space-5) var(--space-7) var(--space-7);
+  padding: var(--space-7) var(--space-5);
   border-right: 1px solid var(--border-light);
   font-size: var(--text-sm);
 }
 .side-nav h4 {
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--brand-primary-deep);
+  letter-spacing: 0.1em;
+  color: var(--terracota-deep);
   margin: var(--space-6) 0 var(--space-3);
 }
 .side-nav h4:first-child { margin-top: 0; }
 .side-nav a {
   display: block;
-  padding: var(--space-2) 0;
+  padding: var(--space-2) var(--space-3);
   color: var(--text-dim);
-  border-left: 2px solid transparent;
-  padding-left: var(--space-3);
-  margin-left: calc(-1 * var(--space-3));
-  transition: all var(--duration-fast) var(--ease);
+  border-radius: var(--radius);
+  transition: all 200ms var(--ease);
 }
-.side-nav a:hover { color: var(--text); border-left-color: var(--brand-primary-soft); }
-.side-nav a.active { color: var(--brand-primary-deep); border-left-color: var(--brand-primary); font-weight: 500; }
+.side-nav a:hover { background: var(--bg-alt); color: var(--terracota-deep); }
+.side-nav a.active { background: var(--coral-soft); color: var(--terracota-deep); font-weight: 500; }
 
-.main {
-  padding: var(--space-9) var(--space-9);
-  max-width: 100%;
-}
+.main { padding: var(--space-9) var(--space-9); }
+
 @media (max-width: 1024px) {
   .layout { grid-template-columns: 1fr; }
   .side-nav { display: none; }
@@ -212,59 +180,82 @@ a:hover { color: var(--brand-primary); }
    ============================================================ */
 .cover {
   position: relative;
-  padding: var(--space-11) 0 var(--space-12);
-  border-bottom: 1px solid var(--border-light);
-  margin-bottom: var(--space-11);
+  padding: var(--space-10) 0 var(--space-10);
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: var(--space-10);
   overflow: hidden;
 }
-.cover::before {
-  content: ''; position: absolute;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--brand-glow-strong) 0%, transparent 70%);
-  top: -100px; right: -100px;
-  animation: breathe 8s var(--ease-breathe) infinite;
+.cover-doodle {
+  position: absolute;
+  font-family: var(--font-accent);
+  color: var(--coral);
+  font-size: 2rem;
+  opacity: 0.4;
+  pointer-events: none;
 }
-.cover::after {
-  content: '☾'; position: absolute;
-  font-size: 60px;
-  color: var(--moon-gold);
-  top: 80px; right: 120px;
-  opacity: 0.6;
-  font-family: serif;
-  transform: rotate(-15deg);
-}
-@keyframes breathe {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
-}
+.cover-doodle.d1 { top: 30px; right: 80px; transform: rotate(15deg); font-size: 3rem; }
+.cover-doodle.d2 { bottom: 60px; right: 200px; transform: rotate(-8deg); color: var(--mostaza); }
+.cover-doodle.d3 { top: 120px; right: 320px; transform: rotate(20deg); color: var(--menta); }
+
 .eyebrow {
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--brand-primary-deep);
+  letter-spacing: 0.15em;
+  color: var(--terracota-deep);
   margin-bottom: var(--space-5);
+  display: inline-block;
+  position: relative;
 }
+.eyebrow::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  height: 60%;
+  background: var(--coral-soft);
+  z-index: -1;
+  border-radius: 2px;
+  transform: skewX(-2deg);
+}
+
 .cover h1 {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--text-4xl);
   line-height: 1.05;
-  letter-spacing: var(--tracking-tighter);
-  color: var(--text);
-  max-width: 14ch;
+  letter-spacing: -0.02em;
+  color: var(--terracota-deep);
+  max-width: 16ch;
   margin-bottom: var(--space-5);
 }
+.cover h1 .highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.cover h1 .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0.05em;
+  left: -0.05em;
+  right: -0.05em;
+  height: 0.4em;
+  background: var(--mostaza);
+  z-index: -1;
+  border-radius: 4px;
+  transform: skewX(-3deg);
+}
 .cover h1 em {
-  font-style: italic;
-  color: var(--brand-primary);
-  background: linear-gradient(120deg, var(--brand-primary), var(--brand-primary-deep));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--coral);
+  font-size: 1.05em;
+  display: inline-block;
+  transform: rotate(-2deg);
 }
 .cover p {
   font-family: var(--font-body);
@@ -274,18 +265,16 @@ a:hover { color: var(--brand-primary); }
   line-height: 1.6;
 }
 .cover-meta {
-  display: flex;
-  gap: var(--space-8);
+  display: flex; gap: var(--space-7);
   margin-top: var(--space-9);
   flex-wrap: wrap;
 }
 .cover-meta div { font-size: var(--text-sm); }
 .cover-meta strong {
   display: block;
-  color: var(--text);
-  font-weight: 600;
+  color: var(--terracota-deep);
+  font-weight: 700;
   margin-bottom: 2px;
-  font-family: var(--font-body);
 }
 .cover-meta span { color: var(--text-dim); }
 
@@ -293,23 +282,22 @@ a:hover { color: var(--brand-primary); }
    SECTIONS
    ============================================================ */
 section {
-  padding: var(--space-10) 0;
+  padding: var(--space-9) 0;
   border-bottom: 1px solid var(--border-light);
 }
 section:last-child { border-bottom: none; }
 
 h2 {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--text-2xl);
   line-height: 1.15;
-  letter-spacing: var(--tracking-tight);
-  color: var(--text);
+  letter-spacing: -0.01em;
+  color: var(--terracota-deep);
   margin-bottom: var(--space-3);
 }
 h3 {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: var(--text-lg);
   color: var(--text);
@@ -318,7 +306,7 @@ h3 {
 .section-intro {
   font-size: var(--text-md);
   color: var(--text-dim);
-  max-width: 60ch;
+  max-width: 65ch;
   margin-bottom: var(--space-7);
   line-height: 1.6;
 }
@@ -333,24 +321,24 @@ h3 {
   margin-bottom: var(--space-7);
 }
 .swatch {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--border-light);
   background: var(--bg-card);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease);
+  transition: all 250ms var(--ease);
   position: relative;
 }
-.swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+.swatch:hover { transform: translateY(-3px) rotate(-1deg); box-shadow: var(--shadow-soft); }
 .swatch-preview {
-  height: 100px;
+  height: 110px;
   width: 100%;
 }
 .swatch-info {
   padding: var(--space-3) var(--space-4);
 }
 .swatch-name {
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--text-sm);
   color: var(--text);
   margin-bottom: 2px;
@@ -364,16 +352,17 @@ h3 {
   content: '✓ copiado';
   position: absolute;
   top: var(--space-3); right: var(--space-3);
+  font-family: var(--font-body);
   font-size: var(--text-xs);
-  background: var(--brand-primary);
-  color: var(--bg-card);
-  padding: 2px 8px;
-  border-radius: var(--radius);
-  font-weight: 500;
+  background: var(--terracota);
+  color: var(--bg);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
 }
 
 /* ============================================================
-   TYPOGRAPHY SAMPLES
+   TYPE SAMPLES
    ============================================================ */
 .type-sample {
   padding: var(--space-7) 0;
@@ -385,29 +374,34 @@ h3 {
   font-size: var(--text-xs);
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wider);
+  letter-spacing: 0.08em;
   margin-bottom: var(--space-3);
 }
 .type-display-h1 {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--text-3xl);
-  line-height: 1.1;
-  letter-spacing: var(--tracking-tighter);
-  color: var(--text);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--terracota-deep);
 }
 .type-display-h2 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--text-2xl);
-  line-height: 1.2;
-  letter-spacing: var(--tracking-tight);
-  color: var(--text);
+  line-height: 1.15;
+  color: var(--terracota);
+}
+.type-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--text-xl);
+  color: var(--ciruela);
 }
 .type-body-lead {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--text-md);
   line-height: 1.6;
   color: var(--text-dim);
@@ -421,21 +415,19 @@ h3 {
 }
 .type-eyebrow {
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--brand-primary-deep);
+  letter-spacing: 0.15em;
+  color: var(--terracota-deep);
 }
-.type-quote {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
+.type-accent {
+  font-family: var(--font-accent);
+  font-weight: 700;
   font-size: var(--text-xl);
-  line-height: 1.4;
-  color: var(--text);
-  padding-left: var(--space-5);
-  border-left: 2px solid var(--brand-primary);
+  color: var(--coral);
+  display: inline-block;
+  transform: rotate(-2deg);
 }
 
 /* ============================================================
@@ -444,46 +436,54 @@ h3 {
 .btn-row {
   display: flex; gap: var(--space-4); flex-wrap: wrap;
   margin-bottom: var(--space-6);
+  align-items: center;
 }
 .btn {
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 700;
   font-size: var(--text-base);
-  padding: var(--space-3) var(--space-6);
+  padding: var(--space-3) var(--space-7);
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
-  transition: all var(--duration-base) var(--ease);
-  letter-spacing: var(--tracking-tight);
+  transition: all 250ms var(--ease);
+  letter-spacing: -0.01em;
 }
 .btn-primary {
-  background: var(--brand-primary);
+  background: var(--terracota);
   color: var(--bg-card);
+  box-shadow: var(--shadow-subtle);
 }
 .btn-primary:hover {
-  background: var(--brand-primary-deep);
-  transform: translateY(-1px);
+  background: var(--terracota-deep);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-soft);
+}
+.btn-playful {
+  background: var(--mostaza);
+  color: var(--text);
+  box-shadow: var(--shadow-playful);
+  border: 2px solid var(--text);
+}
+.btn-playful:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 rgba(156,72,40,0.85);
 }
 .btn-secondary {
   background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  color: var(--terracota-deep);
+  border: 2px solid var(--terracota);
 }
 .btn-secondary:hover {
-  border-color: var(--brand-primary);
-  color: var(--brand-primary-deep);
-  background: var(--bg-card);
+  background: var(--coral-soft);
 }
 .btn-ghost {
   background: transparent;
-  color: var(--brand-primary-deep);
-  padding-left: var(--space-3);
-  padding-right: var(--space-3);
-  font-weight: 500;
+  color: var(--terracota-deep);
+  padding: var(--space-3);
+  font-weight: 600;
 }
-.btn-ghost:hover { color: var(--brand-primary); }
+.btn-ghost:hover { color: var(--terracota); }
 
 /* ============================================================
    CARDS
@@ -499,24 +499,33 @@ h3 {
   padding: var(--space-6);
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-subtle);
-  transition: all var(--duration-base) var(--ease);
+  transition: all 280ms var(--ease);
+  position: relative;
+  overflow: hidden;
 }
 .card:hover {
   box-shadow: var(--shadow-soft);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+}
+.card-tape {
+  position: absolute;
+  top: -10px; left: 30px;
+  width: 80px; height: 24px;
+  background: var(--mostaza-soft);
+  transform: rotate(-3deg);
+  opacity: 0.85;
 }
 .card-number {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--text-3xl);
-  color: var(--brand-primary);
+  color: var(--terracota);
   line-height: 1;
   margin-bottom: var(--space-3);
 }
 .card-title {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--text-lg);
   color: var(--text);
   margin-bottom: var(--space-2);
@@ -529,186 +538,327 @@ h3 {
 }
 
 /* ============================================================
-   MODE PREVIEWS — atmosphere & editorial
+   MODE PREVIEWS
    ============================================================ */
 .mode-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
   margin-top: var(--space-6);
 }
 .mode-preview {
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
 }
 .mode-header {
-  padding: var(--space-4) var(--space-6);
+  padding: var(--space-3) var(--space-5);
   background: var(--bg-card);
   border-bottom: 1px solid var(--border-light);
   display: flex; justify-content: space-between; align-items: center;
 }
 .mode-tag {
   font-size: var(--text-xs);
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--brand-primary-deep);
+  letter-spacing: 0.1em;
+  color: var(--terracota-deep);
 }
 .mode-aspect {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 9 / 16;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+}
+
+/* Energetic */
+.mode-energetic { background: var(--bg); justify-content: center; align-items: center; text-align: center; gap: var(--space-3); }
+.mode-energetic .e-eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--terracota-deep);
+  background: var(--coral-soft);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+.mode-energetic .e-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  color: var(--terracota-deep);
+  letter-spacing: -0.02em;
+}
+.mode-energetic .e-title .underline {
+  position: relative; display: inline-block;
+}
+.mode-energetic .e-title .underline::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: -3px; right: -3px; height: 8px;
+  background: var(--coral); z-index: -1; border-radius: 3px;
+  transform: skewX(-3deg);
+}
+.mode-energetic .e-date-block {
+  background: var(--mostaza-soft);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  text-align: center;
+  margin-top: var(--space-2);
+}
+.mode-energetic .e-date {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--terracota-deep);
+}
+.mode-energetic .e-time {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.mode-energetic .e-cta {
+  margin-top: var(--space-3);
+  background: var(--terracota);
+  color: var(--bg);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.mode-energetic .scribble {
+  position: absolute;
+  font-family: var(--font-accent);
+  color: var(--ciruela);
+  font-size: 1.3rem;
+  transform: rotate(-12deg);
+  top: 20px; right: 16px;
+}
+
+/* Editorial */
+.mode-editorial { background: var(--bg); flex-direction: column; }
+.mode-editorial .ed-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--mostaza);
+  margin-bottom: var(--space-3);
+  position: relative;
+}
+.mode-editorial .ed-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 14px; height: 1px;
+  background: var(--mostaza);
+  margin-left: 8px; vertical-align: middle;
+}
+.mode-editorial .ed-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.15;
+  color: var(--terracota-deep);
+  margin-bottom: var(--space-4);
+}
+.mode-editorial .ed-stat {
+  display: flex; align-items: baseline; gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.mode-editorial .ed-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--mostaza);
+}
+.mode-editorial .ed-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.3;
+}
+.mode-editorial .ed-page {
+  margin-top: auto;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--coral);
+  text-align: right;
+  transform: rotate(-3deg);
+  align-self: flex-end;
+}
+
+/* Atmospheric */
+.mode-atmospheric { background: var(--bg-warm); justify-content: center; align-items: center; text-align: center; }
+.mode-atmospheric .at-eyebrow {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracota-deep);
+  margin-bottom: var(--space-5);
+}
+.mode-atmospheric .at-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: var(--terracota-deep);
+  letter-spacing: -0.01em;
+}
+.mode-atmospheric .at-quote .accent-h {
+  position: relative; display: inline-block;
+}
+.mode-atmospheric .at-quote .accent-h::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: -3px; right: -3px; height: 0.4em;
+  background: var(--menta-soft); z-index: -1;
+  transform: skewX(-3deg);
+}
+.mode-atmospheric .at-leaf {
+  position: absolute;
+  bottom: 30px; right: 30px;
+  font-family: var(--font-accent);
+  color: var(--menta);
+  font-size: 1.5rem;
+  transform: rotate(15deg);
+}
+
+/* ============================================================
+   DECORATIONS SHOWCASE
+   ============================================================ */
+.deco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+  margin: var(--space-5) 0;
+}
+.deco-card {
+  background: var(--bg-card);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+.deco-demo {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  margin-top: var(--space-3);
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-7);
-}
-
-/* Atmosphere mode — vacío, frase italic, una luna */
-.mode-atmosphere {
-  background: var(--bg);
-  flex-direction: column;
-  text-align: center;
-  position: relative;
-}
-.mode-atmosphere::before {
-  content: '☾';
-  position: absolute;
-  top: var(--space-6); right: var(--space-7);
-  font-size: 32px;
-  color: var(--moon-gold);
-  opacity: 0.7;
-  transform: rotate(-12deg);
-  font-family: serif;
-}
-.mode-atmosphere .mini-eyebrow {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--brand-primary-deep);
-  margin-bottom: var(--space-5);
-  position: absolute;
-  bottom: var(--space-6);
-  left: 50%;
-  transform: translateX(-50%);
-}
-.mode-atmosphere .mood-quote {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: var(--text-xl);
-  letter-spacing: var(--tracking-tighter);
-  line-height: 1.3;
+  font-size: var(--text-md);
   color: var(--text);
-  max-width: 70%;
 }
-
-/* Editorial mode — datos, jerarquía, paleta tierra */
-.mode-editorial {
-  background: var(--bg);
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+.deco-demo .demo-highlight {
+  position: relative; display: inline-block;
 }
-.mode-editorial .mini-eyebrow {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--brand-primary-deep);
-  margin-bottom: var(--space-3);
-}
-.mode-editorial .editorial-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--text-lg);
-  line-height: 1.2;
-  color: var(--tier5);
-  margin-bottom: var(--space-4);
-}
-.mode-editorial .editorial-divider {
-  width: 40px; height: 1px;
-  background: var(--brand-primary);
-  margin: var(--space-3) 0;
-}
-.mode-editorial .editorial-stat {
-  display: flex; align-items: baseline; gap: var(--space-3);
-  margin-bottom: var(--space-2);
-}
-.mode-editorial .stat-num {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--text-2xl);
-  color: var(--brand-primary);
-  line-height: 1;
-}
-.mode-editorial .stat-label {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  color: var(--tier4);
-  font-weight: 500;
-  max-width: 120px;
-  line-height: 1.3;
-}
-.mode-editorial .editorial-page {
+.deco-demo .demo-highlight::after {
+  content: '';
   position: absolute;
-  bottom: var(--space-5); right: var(--space-6);
+  bottom: 2px; left: -4px; right: -4px; height: 0.45em;
+  background: var(--coral); z-index: -1; border-radius: 3px;
+  transform: skewX(-3deg);
+}
+.deco-demo .demo-brush {
+  background: var(--coral-soft);
+  padding: 6px 16px;
+  border-radius: 4px;
+  transform: rotate(-1deg);
   font-family: var(--font-body);
-  font-size: 9px;
-  color: var(--text-muted);
-  letter-spacing: var(--tracking-wider);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--terracota-deep);
 }
-
-/* ============================================================
-   SPACING SCALE
-   ============================================================ */
-.scale-row {
-  display: flex; align-items: center; gap: var(--space-4);
-  padding: var(--space-3) 0;
-  border-bottom: 1px dashed var(--border-light);
+.deco-demo .demo-scribble {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  color: var(--ciruela);
+  font-size: 1.3rem;
+  transform: rotate(-3deg);
+  display: inline-block;
 }
-.scale-row:last-child { border-bottom: none; }
-.scale-bar {
-  background: var(--brand-primary-soft);
-  height: 24px;
-  border-radius: var(--radius-sm);
+.deco-demo .demo-tape-wrap {
+  position: relative; padding-top: 16px;
 }
-.scale-name {
-  font-family: var(--font-mono);
+.deco-demo .demo-tape-wrap::before {
+  content: ''; position: absolute;
+  top: 0; left: 30%; width: 60px; height: 18px;
+  background: var(--mostaza-soft);
+  transform: rotate(-4deg);
+  opacity: 0.85;
+}
+.deco-demo .demo-tape-wrap span {
+  display: block; padding: var(--space-3) var(--space-5);
+  background: var(--bg-card);
+  border-radius: var(--radius);
   font-size: var(--text-sm);
   color: var(--text);
-  width: 80px;
-}
-.scale-value {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--text-dim);
 }
 
 /* ============================================================
-   RADIUS SAMPLES
+   CALLOUT
    ============================================================ */
-.radius-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: var(--space-4);
+.callout {
+  background: var(--mostaza-soft);
+  border-left: 4px solid var(--mostaza);
+  padding: var(--space-5) var(--space-6);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: var(--space-6) 0;
 }
-.radius-box {
-  aspect-ratio: 1;
-  background: var(--brand-primary-soft);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--brand-primary-deep);
-  font-weight: 500;
-}
+.callout strong { font-weight: 700; color: var(--terracota-deep); }
+.callout p { color: var(--text); line-height: 1.6; }
+.callout p + p { margin-top: var(--space-3); }
 
 /* ============================================================
-   SHADOWS
+   CODE BLOCKS
+   ============================================================ */
+.code-block {
+  position: relative;
+  background: var(--text);
+  color: var(--bg);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  overflow-x: auto;
+  margin: var(--space-4) 0;
+}
+.code-block pre { white-space: pre-wrap; word-break: break-word; }
+.copy-btn {
+  position: absolute;
+  top: var(--space-3); right: var(--space-3);
+  background: var(--terracota);
+  color: var(--bg);
+  border: none;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 200ms var(--ease);
+}
+.copy-btn:hover { background: var(--mostaza); color: var(--text); }
+.copy-btn.copied { background: var(--menta); color: var(--text); }
+
+/* ============================================================
+   SHADOW SAMPLES
    ============================================================ */
 .shadow-grid {
   display: grid;
@@ -730,99 +880,7 @@ h3 {
 .shadow-soft { box-shadow: var(--shadow-soft); }
 .shadow-medium { box-shadow: var(--shadow-medium); }
 .shadow-strong { box-shadow: var(--shadow-strong); }
-.shadow-glow { box-shadow: var(--shadow-glow); }
-
-/* ============================================================
-   CALLOUT
-   ============================================================ */
-.callout {
-  background: var(--bg-editorial);
-  border-left: 3px solid var(--brand-primary);
-  padding: var(--space-5) var(--space-6);
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  margin: var(--space-6) 0;
-}
-.callout strong {
-  font-weight: 600;
-  color: var(--brand-primary-deep);
-}
-.callout p { color: var(--text); line-height: 1.6; }
-.callout p + p { margin-top: var(--space-3); }
-
-/* ============================================================
-   CODE BLOCKS
-   ============================================================ */
-.code-block {
-  position: relative;
-  background: var(--tier5);
-  color: var(--bg);
-  padding: var(--space-5) var(--space-6);
-  border-radius: var(--radius-lg);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  line-height: 1.6;
-  overflow-x: auto;
-  margin: var(--space-4) 0;
-}
-.code-block pre { white-space: pre-wrap; word-break: break-word; }
-.copy-btn {
-  position: absolute;
-  top: var(--space-3); right: var(--space-3);
-  background: rgba(245, 239, 228, 0.1);
-  color: var(--bg);
-  border: 1px solid rgba(245, 239, 228, 0.2);
-  padding: 4px 12px;
-  border-radius: var(--radius);
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease);
-}
-.copy-btn:hover { background: rgba(245, 239, 228, 0.2); }
-.copy-btn.copied { background: var(--brand-primary); border-color: var(--brand-primary); }
-
-/* ============================================================
-   LOGO MOCKUP
-   ============================================================ */
-.logo-area {
-  display: flex; align-items: center; justify-content: center;
-  background: var(--bg-card);
-  padding: var(--space-10);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-light);
-  margin-bottom: var(--space-5);
-}
-.logo-mock {
-  text-align: center;
-  font-family: var(--font-display);
-}
-.logo-mock-name {
-  font-style: italic;
-  font-weight: 500;
-  font-size: 3rem;
-  color: var(--text);
-  letter-spacing: var(--tracking-tighter);
-  position: relative;
-  display: inline-block;
-}
-.logo-mock-name .v {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--brand-primary);
-  font-size: 3.2rem;
-  display: inline-block;
-  transform: translateY(-2px);
-}
-.logo-mock-tag {
-  font-family: var(--font-body);
-  font-style: normal;
-  font-weight: 500;
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--brand-primary-deep);
-  margin-top: var(--space-3);
-}
+.shadow-playful { box-shadow: var(--shadow-playful); border: 2px solid var(--text); }
 
 /* ============================================================
    FOOTER
@@ -831,350 +889,356 @@ footer {
   padding: var(--space-9) var(--space-7);
   text-align: center;
   border-top: 1px solid var(--border-light);
-  background: var(--bg-alt);
-  margin-top: var(--space-11);
+  background: var(--bg-warm);
+  margin-top: var(--space-10);
 }
-footer p {
-  font-size: var(--text-sm);
-  color: var(--text-dim);
-  margin-bottom: var(--space-3);
-}
+footer p { font-size: var(--text-sm); color: var(--text-dim); margin-bottom: var(--space-3); }
 footer .signature {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--brand-primary-deep);
-}
-
-/* ============================================================
-   UTILS
-   ============================================================ */
-.divider-thin {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--brand-primary-soft), transparent);
-  margin: var(--space-7) 0;
-  border: none;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  color: var(--terracota);
+  font-size: var(--text-lg);
+  transform: rotate(-1deg);
+  display: inline-block;
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="app-header">
-  <div class="app-meta">
-    <span class="app-logo">NirVana <span>Design System</span></span>
+  <div>
+    <span class="app-logo">NirVana <span class="accent">vital</span> Design System</span>
     <span class="app-version">v1.0 · 2026</span>
   </div>
-  <div class="app-meta">
-    <a href="#" class="btn btn-ghost" onclick="downloadTokens(); return false;">↓ tokens.json</a>
-  </div>
+  <a href="#" class="btn btn-ghost" onclick="alert('Descargá tokens.json desde el paquete original.'); return false;">↓ tokens.json</a>
 </header>
 
 <div class="layout">
-
-  <!-- SIDEBAR -->
   <aside class="side-nav">
     <h4>Inicio</h4>
-    <a href="#estrategia" class="active">Estrategia</a>
-    <a href="#logo">Logo</a>
+    <a href="#estrategia" class="active">Posicionamiento</a>
     <h4>Foundations</h4>
     <a href="#color">Color</a>
     <a href="#tipografia">Tipografía</a>
-    <a href="#espaciado">Espaciado</a>
-    <a href="#radios">Radios</a>
+    <a href="#decoraciones">Decoraciones</a>
     <a href="#sombras">Sombras</a>
     <h4>Aplicación</h4>
-    <a href="#modos">Dos modos de pieza</a>
+    <a href="#modos">Tres modos de pieza</a>
     <a href="#botones">Botones</a>
     <a href="#cards">Cards</a>
     <h4>Aplicar</h4>
     <a href="#prompts">Prompts para IAs</a>
-    <a href="#descargas">Descargas</a>
+    <a href="#canva">Cómo usar en Canva</a>
   </aside>
 
-  <!-- MAIN -->
   <main class="main">
 
-    <!-- COVER -->
     <section class="cover" id="estrategia">
+      <div class="cover-doodle d1">★</div>
+      <div class="cover-doodle d2">~</div>
+      <div class="cover-doodle d3">✿</div>
       <p class="eyebrow">Design System v1.0 · NirVana Pilates</p>
-      <h1>Una pausa <em>contemplativa</em> diseñada con criterio.</h1>
-      <p>NirVana no compite en la cancha del fitness. No es un gimnasio, no es wellness genérico, no es motivación gritada. Es una pausa contemplativa para mujeres con criterio que buscan trabajar el cuerpo desde el detalle técnico. <strong style="color: var(--text);">Cada decisión de este sistema sirve para separarnos de los códigos saturados del rubro Pilates en zona norte.</strong></p>
+      <h1>Pilates con <span class="highlight">energía</span> y <em>cariño</em></h1>
+      <p>NirVana es la <strong style="color: var(--terracota-deep);">antítesis consciente</strong> del premium contemplativo dominante en Martínez. Mientras la mayoría de academias compiten con paletas sage y silencio editorial, NirVana es vital, colorida, cercana — pero con criterio. <strong style="color: var(--text);">No es Canva templates random. Es alegre con sistema.</strong></p>
       <div class="cover-meta">
-        <div><strong>Versión</strong><span>1.0.0 — 07/05/2026</span></div>
+        <div><strong>Versión</strong><span>1.0.0 — 08/05/2026</span></div>
         <div><strong>Cliente</strong><span>NirVana Pilates · Martínez</span></div>
-        <div><strong>Tipografías</strong><span>Cormorant Garamond · Outfit</span></div>
-        <div><strong>Mantenedor</strong><span>María Soledad Vila</span></div>
+        <div><strong>Tipografías</strong><span>Fraunces · DM Sans · Caveat</span></div>
+        <div><strong>Mantenedora</strong><span>María Soledad Vila</span></div>
       </div>
 
       <div class="callout" style="margin-top: var(--space-9)">
-        <p><strong>Lectura estratégica.</strong> En el mercado de Pilates en zona norte 2026, la mayoría de academias usan paletas verde sage + serif fina + frases motivacionales en inglés. La paleta crema/dorado/cacao + Cormorant italic + frases pausadas en castellano es <strong>defendible y reconocible</strong>. Sistematizarla acá es protegerla.</p>
+        <p><strong>Lectura estratégica.</strong> En zona norte 2026, el 90% de academias de Pilates compiten en la misma cancha (silencio premium, sage, serif fina). NirVana se diferencia siendo lo opuesto consciente: vital, colorida, cercana. Esto es un diferencial real y defendible — siempre que se ejecute con criterio profesional, no como Canva templates al azar.</p>
       </div>
     </section>
 
-    <!-- LOGO -->
-    <section id="logo">
-      <p class="eyebrow">Identidad</p>
-      <h2>Logotipo</h2>
-      <p class="section-intro">El logo actual de NirVana se conserva como activo principal. Se sistematiza la tipografía de marca alrededor: Cormorant Garamond italic para el wordmark, con la "V" central como elemento distintivo en peso regular. La línea decorativa del Reformer del logo original sigue siendo el isotipo asociado.</p>
-      <div class="logo-area">
-        <div class="logo-mock">
-          <div class="logo-mock-name">Nir<span class="v">V</span>ana</div>
-          <div class="logo-mock-tag">Pilates Reformer · Martínez</div>
-        </div>
-      </div>
-      <h3>Reglas de uso</h3>
-      <ul style="list-style: none; padding-left: 0;">
-        <li style="padding: var(--space-2) 0; padding-left: var(--space-5); position: relative;">
-          <span style="position: absolute; left: 0; color: var(--brand-primary);">·</span>
-          Espacio mínimo libre alrededor del logo: equivalente a la altura de la "V".
-        </li>
-        <li style="padding: var(--space-2) 0; padding-left: var(--space-5); position: relative;">
-          <span style="position: absolute; left: 0; color: var(--brand-primary);">·</span>
-          Para usos chicos (favicon, perfil de WhatsApp, highlights de Instagram) usar versión simplificada (pendiente v1.3).
-        </li>
-        <li style="padding: var(--space-2) 0; padding-left: var(--space-5); position: relative;">
-          <span style="position: absolute; left: 0; color: var(--brand-primary);">·</span>
-          NUNCA aplicar el logo sobre fondos blancos puros. Siempre crema #F5EFE4 o tonos del sistema.
-        </li>
-        <li style="padding: var(--space-2) 0; padding-left: var(--space-5); position: relative;">
-          <span style="position: absolute; left: 0; color: var(--brand-primary);">·</span>
-          NUNCA inclinar, deformar, agregar sombras dramáticas o stroke. La marca respira sin adornos.
-        </li>
-      </ul>
-    </section>
-
-    <!-- COLOR -->
     <section id="color">
-      <p class="eyebrow">Foundations</p>
+      <p class="type-eyebrow">Foundations</p>
       <h2>Paleta de color</h2>
-      <p class="section-intro">Cálida, terrenal, contemplativa. Crema y dorado como ejes, marrón cacao como ancla de autoridad para piezas técnicas. Click para copiar el hex.</p>
+      <p class="section-intro"><strong>5 colores principales + neutros cálidos.</strong> Cualquier pieza usa 2-3 de estos como protagonistas, no todos juntos. El crema sostiene cualquier combinación. Click para copiar el hex.</p>
 
-      <h3>Marca</h3>
+      <h3>Colores principales (brand)</h3>
       <div class="swatch-grid" id="swatches-brand"></div>
 
-      <h3>Neutros</h3>
+      <h3>Neutros cálidos</h3>
       <div class="swatch-grid" id="swatches-neutral"></div>
 
-      <h3>Escala tierra (modo editorial-técnico)</h3>
-      <p style="font-size: var(--text-sm); color: var(--text-dim); margin-bottom: var(--space-4);">Para piezas de autoridad técnica, anatomía, contenido educativo. Crea contraste sin perder calidez. NO usar junto con elementos atmosféricos.</p>
-      <div class="swatch-grid" id="swatches-earth"></div>
-
-      <h3>Atmósfera (usar con moderación)</h3>
-      <p style="font-size: var(--text-sm); color: var(--text-dim); margin-bottom: var(--space-4);">Acentos atmosféricos solo para piezas aspiracionales/contemplativas. Nunca en piezas técnico-educativas.</p>
-      <div class="swatch-grid" id="swatches-atmosphere"></div>
+      <div class="callout">
+        <p><strong>Regla de oro.</strong> Máximo 3 colores brand por pieza. Si usás terracota, podés sumar coral o mostaza como acento — pero no los tres a la vez como protagonistas. La menta y la ciruela son acentos para piezas específicas (frescura o sofisticación), no fondo permanente.</p>
+      </div>
     </section>
 
-    <!-- TIPOGRAFÍA -->
     <section id="tipografia">
-      <p class="eyebrow">Foundations</p>
-      <h2>Tipografía</h2>
-      <p class="section-intro">Mezcla controlada: <strong style="color: var(--text);">Cormorant Garamond</strong> (serif editorial) solo en titulares de marca y citas — italic permitido. <strong style="color: var(--text);">Outfit</strong> (sans humanista) para body, UI y todo lo funcional. Esta combinación es coherente con el sistema MSV completo.</p>
+      <p class="type-eyebrow">Foundations</p>
+      <h2>Tipografía con personalidad</h2>
+      <p class="section-intro">Tres familias con jerarquía clara. Todas en Google Fonts y disponibles en Canva — coherencia gratis.</p>
 
       <div class="type-sample">
-        <p class="type-label">H1 Display · Cormorant Italic 500 · 56px · -0.03em</p>
-        <p class="type-display-h1">Tu pausa entre el ruido</p>
+        <p class="type-label">H1 Display · Fraunces 700 · 56px</p>
+        <p class="type-display-h1">Movimiento que se siente</p>
       </div>
 
       <div class="type-sample">
-        <p class="type-label">H2 Display · Cormorant Italic 500 · 40px · -0.01em</p>
-        <p class="type-display-h2"><em>El cuerpo también necesita silencio</em></p>
+        <p class="type-label">H2 Display · Fraunces 600 · 40px</p>
+        <p class="type-display-h2">El cuerpo aprende cuando lo escuchamos</p>
       </div>
 
       <div class="type-sample">
-        <p class="type-label">Eyebrow · Outfit 500 uppercase · 12px · 0.2em</p>
-        <p class="type-eyebrow">Pilates Reformer · Martínez</p>
+        <p class="type-label">Italic · Fraunces 500 italic · 30px</p>
+        <p class="type-italic">Una clase que te cambia el ritmo</p>
       </div>
 
       <div class="type-sample">
-        <p class="type-label">Body Lead · Outfit 300 · 18px</p>
-        <p class="type-body-lead">NirVana es una academia de Pilates Reformer pensada como pausa contemplativa. Cada clase es una invitación a habitar el cuerpo desde la escucha, no desde la exigencia.</p>
+        <p class="type-label">Eyebrow · DM Sans 700 uppercase · 12px · 0.15em</p>
+        <p class="type-eyebrow">Próxima clase · Pilates Mix</p>
       </div>
 
       <div class="type-sample">
-        <p class="type-label">Body Base · Outfit 400 · 16px</p>
-        <p class="type-body-base">Trabajamos en grupos reducidos con seguimiento personalizado. La técnica del Reformer permite ajustar resistencia y rango de movimiento a cada cuerpo, en cada momento de su historia. No buscamos transformación visible, buscamos coherencia interna.</p>
+        <p class="type-label">Body Lead · DM Sans 400 · 18px</p>
+        <p class="type-body-lead">NirVana es una academia de Pilates Reformer pensada para quienes quieren mover el cuerpo con criterio, energía y comunidad. Acá no hay solemnidad ni perfeccionismo — hay trabajo serio, pero también risa.</p>
       </div>
 
       <div class="type-sample">
-        <p class="type-label">Quote · Cormorant Italic 400 · 30px</p>
-        <p class="type-quote">El silencio del cuerpo es la primera lección que se aprende.</p>
+        <p class="type-label">Body Base · DM Sans 400 · 16px</p>
+        <p class="type-body-base">Trabajamos en grupos reducidos con seguimiento personalizado. Cada cuerpo aprende a su tiempo, y nuestra propuesta es acompañar ese proceso con técnica, paciencia y mucha alegría.</p>
+      </div>
+
+      <div class="type-sample">
+        <p class="type-label">Acento Manuscrita · Caveat 700 · 30px · uso limitado</p>
+        <p class="type-accent">¡Sumate ya!</p>
+        <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--text-muted); font-style: italic;">⚠️ Usar Caveat con medida: máximo 1 vez por pieza, para detalles puntuales como firmas, garabatos, números de página, exclamaciones cortas.</p>
       </div>
     </section>
 
-    <!-- DOS MODOS DE PIEZA -->
+    <section id="decoraciones">
+      <p class="type-eyebrow">Foundations</p>
+      <h2>Sistema de decoraciones</h2>
+      <p class="section-intro">Los subrayados, brushStrokes y garabatos no son al azar — están definidos. Esto es lo que separa "marca vital con sistema" de "Canva template random". <strong>Máximo 2 elementos decorativos por pieza.</strong></p>
+
+      <div class="deco-grid">
+        <div class="deco-card">
+          <h3 style="margin-top: 0;">Highlight</h3>
+          <p style="font-size: var(--text-sm); color: var(--text-dim);">Subrayado tipo marcador detrás del texto. Color coral o mostaza. Forma ligeramente irregular.</p>
+          <div class="deco-demo">Una clase que <span class="demo-highlight">te cambia</span> el ritmo</div>
+        </div>
+
+        <div class="deco-card">
+          <h3 style="margin-top: 0;">Brush Stroke</h3>
+          <p style="font-size: var(--text-sm); color: var(--text-dim);">Banda de fondo tipo pincelada. Para eyebrows o tags destacados.</p>
+          <div class="deco-demo"><span class="demo-brush">PRÓXIMA CLASE</span></div>
+        </div>
+
+        <div class="deco-card">
+          <h3 style="margin-top: 0;">Scribble</h3>
+          <p style="font-size: var(--text-sm); color: var(--text-dim);">Garabato manuscrito a mano alzada con Caveat. Para llamar la atención sobre un dato.</p>
+          <div class="deco-demo">Cupos: <span class="demo-scribble">¡últimos 3!</span></div>
+        </div>
+
+        <div class="deco-card">
+          <h3 style="margin-top: 0;">Tape</h3>
+          <p style="font-size: var(--text-sm); color: var(--text-dim);">Cinta washi tape para integrar fotos en composición tipo collage cómic.</p>
+          <div class="deco-demo">
+            <div class="demo-tape-wrap"><span>Foto integrada al feed</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="modos">
-      <p class="eyebrow">Aplicación</p>
-      <h2>Dos modos de pieza</h2>
-      <p class="section-intro">La decisión más importante del sistema. NirVana no se ve siempre igual, se ve <strong style="color: var(--text);">de dos maneras controladas</strong>. Mezclar los dos modos en una misma pieza es lo que rompe la marca. Cada pieza elige uno y se compromete.</p>
+      <p class="type-eyebrow">Aplicación</p>
+      <h2>Tres modos de pieza</h2>
+      <p class="section-intro">NirVana se ve <strong>de tres maneras controladas</strong>. Cada pieza elige un modo y se compromete. Mezclar los modos rompe la marca.</p>
 
       <div class="mode-grid">
-        <!-- Atmosphere mode -->
         <div class="mode-preview">
           <div class="mode-header">
-            <span class="mode-tag">Modo Atmósfera</span>
-            <span style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">1080×1080</span>
+            <span class="mode-tag">Modo Energético</span>
+            <span style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">90% del feed</span>
           </div>
-          <div class="mode-aspect mode-atmosphere">
-            <p class="mood-quote">El cuerpo también necesita silencio</p>
-            <p class="mini-eyebrow">NirVana · Martínez</p>
+          <div class="mode-aspect mode-energetic">
+            <span class="scribble">¡reservá!</span>
+            <span class="e-eyebrow">PRÓXIMA CLASE</span>
+            <p class="e-title">Pilates <span class="underline">Mix</span></p>
+            <div class="e-date-block">
+              <p class="e-date">Martes 12 de mayo</p>
+              <p class="e-time">18 hs · 7 cupos</p>
+            </div>
+            <span class="e-cta">Reservá ahora</span>
           </div>
         </div>
 
-        <!-- Editorial mode -->
         <div class="mode-preview">
           <div class="mode-header">
             <span class="mode-tag">Modo Editorial</span>
-            <span style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">1080×1350</span>
+            <span style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">para educativo</span>
           </div>
           <div class="mode-aspect mode-editorial">
-            <p class="mini-eyebrow">Anatomía simple · 01</p>
-            <p class="editorial-title">Por qué el suelo pélvico importa después de los 35</p>
-            <div class="editorial-divider"></div>
-            <div class="editorial-stat">
-              <span class="stat-num">3×</span>
-              <span class="stat-label">más prevalencia de incontinencia post-parto</span>
+            <span class="ed-eyebrow">PILATES SIMPLE</span>
+            <p class="ed-title">Por qué tu lumbar te avisa cuando trabajás mucho sentada</p>
+            <div class="ed-stat">
+              <span class="ed-num">68%</span>
+              <span class="ed-label">de mujeres con dolor lumbar tienen débil el transverso</span>
             </div>
-            <div class="editorial-stat">
-              <span class="stat-num">12 sem</span>
-              <span class="stat-label">tiempo medio de recuperación con trabajo dirigido</span>
+            <div class="ed-stat">
+              <span class="ed-num">8 sem</span>
+              <span class="ed-label">tiempo medio de mejora con trabajo dirigido</span>
             </div>
-            <p class="editorial-page">1/5</p>
+            <span class="ed-page">1/5</span>
+          </div>
+        </div>
+
+        <div class="mode-preview">
+          <div class="mode-header">
+            <span class="mode-tag">Modo Atmosférico</span>
+            <span style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">baja frecuencia</span>
+          </div>
+          <div class="mode-aspect mode-atmospheric">
+            <span class="at-eyebrow">NIRVANA · MARTÍNEZ</span>
+            <p class="at-quote">El cuerpo aprende cuando lo <span class="accent-h">escuchamos</span></p>
+            <span class="at-leaf">~ ✿</span>
           </div>
         </div>
       </div>
 
       <div class="callout">
         <p><strong>Cuándo usar cada modo:</strong></p>
-        <p><strong>Atmósfera</strong> · frases de marca, portadas de Reels, stories de mood, posts contemplativos.</p>
-        <p><strong>Editorial</strong> · carruseles educativos, anatomía, técnica, datos, anuncios con CTA.</p>
-        <p>Si una pieza no encaja claramente en uno de los dos modos, probablemente no debería existir. Mejor decidir el modo, comprometerse, y dejar piezas con criterio fuerte que muchas piezas tibias.</p>
+        <p><strong>Energético</strong> · 90% del feed. Promos, anuncios de clases, cupos abiertos, ofertas, novedades. Todo lo "comercial".</p>
+        <p><strong>Editorial</strong> · contenido educativo, anatomía simple, técnica, datos, infografías. Mantiene calidez sin saturar.</p>
+        <p><strong>Atmosférico</strong> · 1 de cada 10 piezas máximo. Frases-mood, cierres, mensajes contemplativos cálidos.</p>
       </div>
     </section>
 
-    <!-- BOTONES -->
     <section id="botones">
-      <p class="eyebrow">Componentes</p>
+      <p class="type-eyebrow">Componentes</p>
       <h2>Botones</h2>
-      <p class="section-intro">Pill solo para CTAs principales (acción contemplativa: "reservar"). Radius medium para secundarios. Ghost para acciones inline.</p>
+      <p class="section-intro">CTAs grandes, pill, con personalidad. El "playful" tiene sombra dura offset — usar para piezas que necesitan extra impacto.</p>
       <div class="btn-row">
-        <button class="btn btn-primary">Reservar primera clase</button>
+        <button class="btn btn-primary">Reservá tu clase</button>
+        <button class="btn btn-playful">¡Sumate ya!</button>
         <button class="btn btn-secondary">Ver horarios</button>
-        <button class="btn btn-ghost">Saber más →</button>
+        <button class="btn btn-ghost">Más info →</button>
       </div>
     </section>
 
-    <!-- CARDS -->
     <section id="cards">
-      <p class="eyebrow">Componentes</p>
+      <p class="type-eyebrow">Componentes</p>
       <h2>Cards</h2>
-      <p class="section-intro">Fondo bg-card (nunca blanco puro), radius lg, sombra subtle. Hover sube y eleva sombra. Para cards con número grande de marca, usar Cormorant 600 dorado.</p>
+      <p class="section-intro">Fondos crema cálidos, radius generoso, sombras suaves. La cinta decorativa (tape) puede agregarse en cards puntuales para reforzar la estética cómic.</p>
       <div class="card-grid">
         <div class="card">
+          <div class="card-tape"></div>
           <p class="card-number">01</p>
-          <p class="card-title">Escucha del cuerpo</p>
-          <p class="card-text">Cada clase arranca con un mapa interno: dónde estás hoy, qué te duele, qué necesitás. Sin ese registro, no hay práctica seria.</p>
+          <p class="card-title">Pilates Mix</p>
+          <p class="card-text">Reformer + mat + funcional en una sola clase. Para cuerpos que quieren todo en 60 minutos.</p>
         </div>
         <div class="card">
           <p class="card-number">02</p>
-          <p class="card-title">Técnica progresiva</p>
-          <p class="card-text">El Reformer permite graduar resistencia con precisión. Avanzamos sin forzar, sostenemos sin estancarnos.</p>
+          <p class="card-title">Reformer puro</p>
+          <p class="card-text">Trabajo profundo de fuerza y control con la cama de resortes. Técnica progresiva, sin atajos.</p>
         </div>
         <div class="card">
           <p class="card-number">03</p>
-          <p class="card-title">Comunidad sin ruido</p>
-          <p class="card-text">Grupos reducidos, ritmo pausado, conversaciones reales. Pilates como excusa para algo más grande.</p>
+          <p class="card-title">Posparto consciente</p>
+          <p class="card-text">Vuelta al movimiento con criterio. Suelo pélvico, abdomen profundo, sin presión por resultados.</p>
         </div>
       </div>
     </section>
 
-    <!-- ESPACIADO -->
-    <section id="espaciado">
-      <p class="eyebrow">Foundations</p>
-      <h2>Escala de espaciado</h2>
-      <p class="section-intro">NirVana respira. El vacío es un activo de marca, no espacio sin usar. La escala arranca en 4px y llega hasta 128px para separaciones entre bloques.</p>
-      <div>
-        <div class="scale-row"><span class="scale-name">space-1</span><div class="scale-bar" style="width: 4px;"></div><span class="scale-value">4px</span></div>
-        <div class="scale-row"><span class="scale-name">space-2</span><div class="scale-bar" style="width: 8px;"></div><span class="scale-value">8px</span></div>
-        <div class="scale-row"><span class="scale-name">space-4</span><div class="scale-bar" style="width: 16px;"></div><span class="scale-value">16px</span></div>
-        <div class="scale-row"><span class="scale-name">space-6</span><div class="scale-bar" style="width: 32px;"></div><span class="scale-value">32px</span></div>
-        <div class="scale-row"><span class="scale-name">space-8</span><div class="scale-bar" style="width: 48px;"></div><span class="scale-value">48px</span></div>
-        <div class="scale-row"><span class="scale-name">space-10</span><div class="scale-bar" style="width: 80px;"></div><span class="scale-value">80px</span></div>
-        <div class="scale-row"><span class="scale-name">space-11</span><div class="scale-bar" style="width: 96px;"></div><span class="scale-value">96px · sección desktop</span></div>
-        <div class="scale-row"><span class="scale-name">space-12</span><div class="scale-bar" style="width: 128px;"></div><span class="scale-value">128px · separación grande</span></div>
-      </div>
-    </section>
-
-    <!-- RADIOS -->
-    <section id="radios">
-      <p class="eyebrow">Foundations</p>
-      <h2>Radios</h2>
-      <p class="section-intro">Bordes suaves pero NO juguetones. NirVana es contemplativa. Pill solo para CTAs principales.</p>
-      <div class="radius-grid">
-        <div class="radius-box" style="border-radius: 4px;">sm · 4px</div>
-        <div class="radius-box" style="border-radius: 8px;">base · 8px</div>
-        <div class="radius-box" style="border-radius: 12px;">md · 12px</div>
-        <div class="radius-box" style="border-radius: 16px;">lg · 16px</div>
-        <div class="radius-box" style="border-radius: 24px;">xl · 24px</div>
-        <div class="radius-box" style="border-radius: 9999px;">pill</div>
-      </div>
-    </section>
-
-    <!-- SOMBRAS -->
     <section id="sombras">
-      <p class="eyebrow">Foundations</p>
+      <p class="type-eyebrow">Foundations</p>
       <h2>Sombras</h2>
-      <p class="section-intro">Sombras cálidas con tinte dorado-marrón, NUNCA grises puras. NirVana = calma = sombras suaves.</p>
+      <p class="section-intro">Sombras cálidas tinte terracota — nunca grises puras. La "playful" es offset duro, para piezas con personalidad extra.</p>
       <div class="shadow-grid">
         <div class="shadow-box shadow-subtle">subtle</div>
         <div class="shadow-box shadow-soft">soft</div>
         <div class="shadow-box shadow-medium">medium</div>
         <div class="shadow-box shadow-strong">strong</div>
+        <div class="shadow-box shadow-playful">playful</div>
       </div>
     </section>
 
-    <!-- PROMPTS -->
     <section id="prompts">
-      <p class="eyebrow">Aplicar</p>
-      <h2>Prompts para IAs</h2>
-      <p class="section-intro">Bloque copiable para pegar al inicio de cualquier prompt en v0, Lovable, Cursor, ChatGPT, Claude. Garantiza que la IA respete la marca en lugar de inventar paletas wellness genéricas.</p>
+      <p class="type-eyebrow">Aplicar</p>
+      <h2>Prompt para IAs</h2>
+      <p class="section-intro">Bloque copiable para pegar al inicio de cualquier prompt en Canva AI, ChatGPT, Claude, v0. Garantiza que la IA respete la marca.</p>
 
       <div class="code-block">
         <button class="copy-btn" onclick="copyPrompt(this, 'prompt-brand')">Copiar</button>
-        <pre id="prompt-brand">Trabajo bajo el design system "NirVana Pilates — academia de Pilates Reformer en Martínez, BS AS".
+        <pre id="prompt-brand">Trabajo bajo el design system "NirVana Vital — academia de Pilates Reformer en Martínez".
 
-CONCEPTO CENTRAL: "Nirvana como pausa contemplativa. El cuerpo como camino. El vacío como lujo."
-NirVana NO es un gimnasio fitness. NO es wellness genérico. Es una pausa contemplativa para mujeres con criterio.
+CONCEPTO: "Energía con cariño. Movimiento con criterio."
+NirVana es la antítesis del premium contemplativo común en zona norte. Vital, colorida, cercana — pero CON criterio.
 
-PALETA (usar exactos):
-- Marca primaria (dorado mostaza): #B8995A
-- Marca suave: #D4BD8A
-- Marca profunda: #8C7035
-- Fondo principal (crema cálido): #F5EFE4
-- Fondo alterno: #EBE2D2
-- Card: #FFFCF6 (NUNCA blanco puro)
-- Texto: #2A2520 (NUNCA negro puro)
-- Texto secundario: #6B5F4E
-- Acento luna: #D4B062 (con moderación)
+PALETA (5 brand + neutros):
+- Terracota: #C2613D · Terracota deep: #9C4828 · Terracota soft: #E8A88C
+- Coral: #F5A088 · Coral soft: #FBC9B6
+- Mostaza: #E8B547 · Mostaza soft: #F4D898
+- Menta: #9CB89E · Menta soft: #C8D8C8
+- Ciruela: #8B5A6B · Ciruela soft: #C9A6B0
+- Fondo crema: #FAF3E7 · Card: #FFFAF0 · Fondo cálido: #F5DCC4
+- Texto: #3D2817 (NUNCA negro) · Texto secundario: #7A5C42
 
-ESCALA TIERRA (modo editorial):
-- Tier 1: #E8DCC8  ·  Tier 2: #C9B591  ·  Tier 3: #9A7F5C
-- Tier 4: #5C4632  ·  Tier 5: #2E2218
+TIPOGRAFÍA (Google Fonts, disponibles en Canva):
+- Display titulares: 'Fraunces' pesos 400-900, italic permitido
+- Body + UI: 'DM Sans' pesos 300-700
+- Acento manuscrita: 'Caveat' (USAR MÁXIMO 1 vez por pieza)
 
-TIPOGRAFÍA:
-- Display (titulares + citas): 'Cormorant Garamond' italic permitido, 400/500/600
-- Body + UI: 'Outfit' 300/400/500/600/700
+PERSONALIDAD: vital con sistema. 2-3 colores brand por pieza máximo. Fraunces 600+ para impacto.
+Decoraciones: highlight (subrayado coral/mostaza), brushStroke, scribble, tape. Máximo 2 por pieza.
+Bordes pill en CTAs. Sombras cálidas (rgba 156,72,40,0.12). Composición permite asimetría y rotaciones leves.
+Las fotos pueden ir filtradas estilo "Comic Style" en Canva.
 
-PERSONALIDAD: contemplativa, terrenal, premium. Mucho aire (50-60%). Sombras cálidas tinte dorado, nunca grises. Pill solo en CTAs principales. Tracking negativo en titulares Cormorant grandes.
+EVITAR: verde sage + serif fina (es lo opuesto, premium contemplativo), Inter/Roboto/Helvetica, negro puro,
+saturación caótica (todos los colores juntos), Comic Sans/Pacifico/Lobster, más de 3 elementos decorativos,
+frases motivacionales gritadas en inglés, fitness fluo americano.
 
-DOS MODOS:
-- ATMÓSFERA (frases-mood, portadas): mucho aire, Cormorant italic, una luna como acento, sin íconos.
-- EDITORIAL (técnica, datos, CTAs): jerarquía clara, paleta tierra, sin elementos cosmos.
-
-EVITAR: verde sage + serif fina, rosa millennial, Inter/Roboto/Poppins, frases motivacionales gritadas, cuerpos completos identificables, antes-y-después, constelaciones cargadas, gradientes saturados, layouts simétricos rígidos.</pre>
+TRES MODOS:
+- ENERGÉTICO (90% del feed): promos, anuncios. 2-3 colores, Fraunces grande, decoraciones visibles.
+- EDITORIAL (educativo): 1-2 colores + crema, Fraunces 500/600, jerarquía clara, 1 decoración sutil.
+- ATMOSFÉRICO (1 de cada 10): frases-mood. Fondo cálido + Fraunces italic + 1 acento.</pre>
       </div>
 
       <div class="callout">
-        <p><strong>Para más prompts específicos</strong> (post de Instagram modo atmósfera, carrusel educativo modo editorial, story con ritual, landing page, captions) consultar el archivo <code style="background: var(--bg-card); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: var(--text-sm);">prompts-para-ia.md</code> incluido en el paquete.</p>
+        <p><strong>Para más prompts</strong> (story modo energético, carrusel editorial, frase atmosférica, captions) consultar <code style="background: var(--bg-card); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: var(--text-sm);">prompts-para-ia.md</code> en el paquete.</p>
+      </div>
+    </section>
+
+    <section id="canva">
+      <p class="type-eyebrow">Aplicar</p>
+      <h2>Cómo usar en Canva</h2>
+      <p class="section-intro">Este sistema está pensado para que vos diseñes en Canva con criterio. Los pasos para arrancar cada pieza nueva:</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <p class="card-number">1</p>
+          <p class="card-title">Decidí el modo</p>
+          <p class="card-text">Energético (90% de las veces), editorial (educativo), o atmosférico (frases-mood, baja frecuencia). Cada pieza elige uno y se compromete.</p>
+        </div>
+        <div class="card">
+          <p class="card-number">2</p>
+          <p class="card-title">Elegí 2-3 colores</p>
+          <p class="card-text">De la paleta brand. Terracota es seguro como base. Sumá coral o mostaza como acento. Menta o ciruela solo si la pieza lo pide.</p>
+        </div>
+        <div class="card">
+          <p class="card-number">3</p>
+          <p class="card-title">Cargá las fuentes</p>
+          <p class="card-text">Fraunces, DM Sans y Caveat están disponibles gratis en Canva. Buscalas en el panel de tipografías y marcalas como favoritas.</p>
+        </div>
+        <div class="card">
+          <p class="card-number">4</p>
+          <p class="card-title">Si hay foto, filtrala</p>
+          <p class="card-text">Editar foto → Estilo → Comic Style. Esto resuelve el tema rostros (caricaturizados) y suma personalidad de marca.</p>
+        </div>
+        <div class="card">
+          <p class="card-number">5</p>
+          <p class="card-title">Sumá decoraciones</p>
+          <p class="card-text">Máximo 2 por pieza: 1 highlight + 1 brushStroke, por ejemplo. Más es saturación. Menos es buena dirección.</p>
+        </div>
+        <div class="card">
+          <p class="card-number">6</p>
+          <p class="card-title">Revisá el checklist</p>
+          <p class="card-text">¿Modo claro? ¿2-3 colores? ¿Fraunces/DM Sans/Caveat? ¿Texto en marrón cacao? ¿CTA pill grande? Si todo OK, publicá.</p>
+        </div>
       </div>
     </section>
 
@@ -1182,48 +1246,37 @@ EVITAR: verde sage + serif fina, rosa millennial, Inter/Roboto/Poppins, frases m
 </div>
 
 <footer>
-  <p class="signature">— Diseñado con criterio por María Soledad Vila, mayo 2026 —</p>
-  <p>NirVana Pilates Design System v1.0 · primer cliente formalizado bajo metodología Talento Impulsa</p>
+  <p class="signature">— Hecho con criterio para NirVana, mayo 2026 —</p>
+  <p>NirVana Vital Design System v1.0 · sub-marca cliente bajo metodología Talento Impulsa</p>
 </footer>
 
 <script>
-// ============================================================
-// PALETTE DATA
-// ============================================================
 const PALETTES = {
   brand: [
-    { name: 'primary', hex: '#B8995A', desc: 'Dorado mostaza' },
-    { name: 'primarySoft', hex: '#D4BD8A', desc: 'Hover, gradientes' },
-    { name: 'primaryDeep', hex: '#8C7035', desc: 'Énfasis' },
+    { name: 'terracota', hex: '#C2613D', desc: 'Color de marca primario' },
+    { name: 'terracotaDeep', hex: '#9C4828', desc: 'Énfasis' },
+    { name: 'terracotaSoft', hex: '#E8A88C', desc: 'Halos y gradientes' },
+    { name: 'coral', hex: '#F5A088', desc: 'Acentos juguetones' },
+    { name: 'coralSoft', hex: '#FBC9B6', desc: 'Highlights' },
+    { name: 'mostaza', hex: '#E8B547', desc: 'Datos importantes' },
+    { name: 'mostazaSoft', hex: '#F4D898', desc: 'Banners suaves' },
+    { name: 'menta', hex: '#9CB89E', desc: 'Frescura' },
+    { name: 'mentaSoft', hex: '#C8D8C8', desc: 'Fondos secundarios' },
+    { name: 'ciruela', hex: '#8B5A6B', desc: 'Sofisticación' },
+    { name: 'ciruelaSoft', hex: '#C9A6B0', desc: 'Acento ocasional' },
   ],
   neutral: [
-    { name: 'bg', hex: '#F5EFE4', desc: 'Fondo principal' },
-    { name: 'bgAlt', hex: '#EBE2D2', desc: 'Fondo alterno' },
-    { name: 'bgCard', hex: '#FFFCF6', desc: 'Cards (nunca blanco puro)' },
-    { name: 'bgEditorial', hex: '#F0E8D8', desc: 'Bloque editorial' },
-    { name: 'border', hex: '#D8CDB8', desc: 'Borde definido' },
-    { name: 'text', hex: '#2A2520', desc: 'Texto principal' },
-    { name: 'textDim', hex: '#6B5F4E', desc: 'Texto secundario' },
-    { name: 'textMuted', hex: '#A89980', desc: 'Texto deshabilitado' },
-  ],
-  earth: [
-    { name: 'tier1', hex: '#E8DCC8', desc: 'Más claro' },
-    { name: 'tier2', hex: '#C9B591', desc: 'Intermedio claro' },
-    { name: 'tier3', hex: '#9A7F5C', desc: 'Intermedio' },
-    { name: 'tier4', hex: '#5C4632', desc: 'Profundo (autoridad)' },
-    { name: 'tier5', hex: '#2E2218', desc: 'Cacao (modo dark)' },
-  ],
-  atmosphere: [
-    { name: 'moonGold', hex: '#D4B062', desc: 'Luna / astro acento' },
-    { name: 'duskRose', hex: '#C9A89A', desc: 'Atardecer' },
-    { name: 'mist', hex: '#D5CFC2', desc: 'Bruma' },
-    { name: 'deepNight', hex: '#1F1810', desc: 'Modo nocturno' },
+    { name: 'bg', hex: '#FAF3E7', desc: 'Fondo principal crema' },
+    { name: 'bgAlt', hex: '#F2E8D5', desc: 'Fondo alterno' },
+    { name: 'bgCard', hex: '#FFFAF0', desc: 'Cards' },
+    { name: 'bgWarm', hex: '#F5DCC4', desc: 'Banners destacados' },
+    { name: 'border', hex: '#D8C5A8', desc: 'Borde definido' },
+    { name: 'text', hex: '#3D2817', desc: 'Texto principal' },
+    { name: 'textDim', hex: '#7A5C42', desc: 'Texto secundario' },
+    { name: 'textMuted', hex: '#A89074', desc: 'Texto deshabilitado' },
   ],
 };
 
-// ============================================================
-// RENDER SWATCHES
-// ============================================================
 function renderSwatches(containerId, palette) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -1237,15 +1290,9 @@ function renderSwatches(containerId, palette) {
     </div>
   `).join('');
 }
-
 renderSwatches('swatches-brand', PALETTES.brand);
 renderSwatches('swatches-neutral', PALETTES.neutral);
-renderSwatches('swatches-earth', PALETTES.earth);
-renderSwatches('swatches-atmosphere', PALETTES.atmosphere);
 
-// ============================================================
-// COPY HEX
-// ============================================================
 function copyHex(el, hex) {
   navigator.clipboard.writeText(hex).then(() => {
     el.classList.add('copied');
@@ -1253,9 +1300,6 @@ function copyHex(el, hex) {
   });
 }
 
-// ============================================================
-// COPY PROMPT
-// ============================================================
 function copyPrompt(btn, id) {
   const text = document.getElementById(id).textContent;
   navigator.clipboard.writeText(text).then(() => {
@@ -1268,12 +1312,8 @@ function copyPrompt(btn, id) {
   });
 }
 
-// ============================================================
-// SCROLL SPY (sidebar nav active state)
-// ============================================================
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.side-nav a');
-
 function updateActiveNav() {
   let current = '';
   sections.forEach(section => {
@@ -1287,13 +1327,6 @@ function updateActiveNav() {
 }
 window.addEventListener('scroll', updateActiveNav);
 updateActiveNav();
-
-// ============================================================
-// DOWNLOAD TOKENS
-// ============================================================
-function downloadTokens() {
-  alert('Descargá tokens.json desde el paquete original. Este botón es decorativo en el HTML autocontenido.');
-}
 </script>
 
 </body>

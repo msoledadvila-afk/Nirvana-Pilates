@@ -1,145 +1,136 @@
-# NirVana Pilates · Design System
+# NirVana Vital · Design System
 
-> Sistema de diseño para **NirVana Pilates** — academia de Pilates Reformer en Martínez, Buenos Aires. Concepto: *Nirvana como pausa contemplativa. El cuerpo como camino. El vacío como lujo.*
+> Sistema de diseño para **NirVana Pilates** — academia de Pilates Reformer en Martínez, Buenos Aires. Concepto: *Energía con cariño. Movimiento con criterio. Pilates que se siente vivo.*
 
-**Versión 1.0.0** · 7 de mayo de 2026 · Mantenido por María Soledad Vila
+**Versión 1.0.0** · 8 de mayo de 2026 · Mantenido por María Soledad Vila
 
 ---
 
-## 🌙 Posicionamiento estratégico
+## 🌈 Posicionamiento estratégico
 
-NirVana **no compite en la cancha del fitness**. No es un gimnasio, no es wellness genérico, no es un estudio motivacional. Es una pausa contemplativa para mujeres con criterio que buscan trabajar el cuerpo desde el detalle técnico, no desde la motivación gritada.
+NirVana **se diferencia conscientemente del premium contemplativo dominante en Martínez/Acassuso/San Isidro**. Mientras la mayoría de academias de Pilates en zona norte compiten con paletas crema-sage, serifs finas y silencio editorial, NirVana es **lo opuesto consciente**: vital, colorida, cercana, con energía.
 
-Esto significa que cada decisión visual del sistema sirve para **separarnos de los códigos saturados del rubro Pilates en zona norte**:
+Esto NO significa Canva templates random sin criterio. Significa **alegre con sistema**.
 
-| La competencia hace | NirVana hace |
+| Lo que hace la competencia premium | Lo que hace NirVana Vital |
 |---|---|
-| Verde sage + serif fina | Crema cálido + serif editorial |
-| Cuerpos completos identificables | Detalles, manos, pies, planos cenitales |
-| "Strong Woman", "Glow", "Believe" | "Tu pausa entre el ruido" |
-| Constelaciones decorativas cargadas | Vacío + un solo astro como acento |
-| Antes-y-después de medidas | Anatomía simple y autoridad técnica |
-| Posts saturados de elementos | Mucho aire, mínimo decorado |
+| Sage + serif fina + silencio | Terracota + Fraunces + energía |
+| "Pausa contemplativa" | "Movimiento que se siente" |
+| Vacío como lujo | Color como protagonista |
+| Aesop / Le Labo | Felicitas Pizarro / Reformerista |
+| Frases en inglés en italic | Castellano cálido directo |
+| Sin caras (premium) | Caras caricaturizadas (filtro Comic) |
+| Una sola tipografía | Mezcla con criterio (display + body + acento) |
 
 ---
 
 ## 📁 Qué hay en este paquete
 
 ```
-nirvana-pilates-design-system/
-├── tokens.json           ← La fuente de verdad. Colores, tipografía, espaciado.
-├── design-system.html    ← Mostrador interactivo. Abrirlo en cualquier navegador.
-├── prompts-para-ia.md    ← Prompts listos para v0, Lovable, Cursor, Claude.
-└── README.md             ← Este archivo.
+nirvana-vital-design-system/
+├── tokens.json           ← La fuente de verdad: colores, tipografía, espaciado
+├── design-system.html    ← Mostrador interactivo (doble click y se abre)
+├── prompts-para-ia.md    ← Prompts listos para Canva AI, ChatGPT, v0, Claude
+└── README.md             ← Este archivo
 ```
 
-### `tokens.json`
-**El archivo más importante.** Contiene todos los valores del sistema en formato W3C Design Tokens. Si en el futuro querés exportar a Figma, Tailwind, Style Dictionary o cualquier herramienta de design ops, todo arranca acá.
+---
 
-### `design-system.html`
-**Mostrador autocontenido.** Doble click y se abre en el navegador. Muestra paleta, tipografía, componentes, dos modos de pieza, y los prompts copiables. Hecho en HTML + CSS vanilla — sobrevive a cualquier framework de moda.
+## 🎨 Las decisiones clave
 
-### `prompts-para-ia.md`
-**El archivo más útil en el día a día.** Pegale el bloque de identidad a cualquier IA antes de pedirle algo, y la IA va a respetar la marca en lugar de inventar paletas wellness genéricas.
+### Una paleta de 5 colores principales (no caos)
+
+La diferencia entre "marca vital colorida con criterio" y "Canva templates desordenados" es esto: **5 colores definidos**, no 30 al azar.
+
+- **Terracota** — alma del sistema. Color de marca primario.
+- **Coral** — para acentos juguetones, subrayados.
+- **Mostaza** — para fechas, números, datos importantes.
+- **Menta** — frescura, equilibrio. Inspirada en las pelotas verdes del estudio.
+- **Ciruela** — sofisticación. Para que el sistema no se vea infantil.
+
+Cada pieza usa **2-3 colores** de estos, no todos juntos. El crema cálido sostiene cualquier combinación.
+
+### Tres tipografías con jerarquía clara
+
+- **Fraunces** (display) — serif con personalidad amistosa, curvas blandas. Para titulares.
+- **DM Sans** (body) — humanista, legible, con carácter sin distraer. Para todo lo funcional.
+- **Caveat** (manuscrita) — solo para garabatos puntuales. Máximo 1 vez por pieza.
+
+Las tres están en Google Fonts y disponibles en Canva. Coherencia gratis.
+
+### Tres modos de pieza, no uno solo
+
+- **Energético** (dominante) — promos, captación, anuncios.
+- **Editorial cálido** — contenido educativo, técnica, anatomía.
+- **Atmosférico cálido** — frases-mood, cierres. Baja frecuencia (1 de cada 10 piezas).
+
+Mezclar los modos rompe la marca. Cada pieza elige uno y se compromete.
+
+### Sistema de elementos decorativos definidos
+
+Los subrayados, brushStrokes, scribbles y cintas decorativas NO son "lo que sale en el momento". Están definidos:
+
+- **Highlight** — subrayado tipo marcador, coral o mostaza, irregular.
+- **BrushStroke** — banda de fondo tipo pincelada para eyebrows.
+- **Scribble** — garabato a mano alzada, terracota o ciruela.
+- **Tape** — washi tape para fotos en composición tipo collage.
+
+Máximo 2 elementos decorativos por pieza.
 
 ---
 
-## 🎨 Decisiones clave del sistema
+## 🚀 Cómo aplicar el sistema en Canva
 
-### Dos modos de pieza, no uno
+### Antes de crear cualquier pieza nueva
 
-Es la decisión más importante del sistema. NirVana no se ve siempre igual, se ve **de dos maneras controladas**:
+1. **Decidí el modo** (energético / editorial / atmosférico).
+2. **Elegí 2-3 colores** de la paleta brand para esa pieza.
+3. **Cargá las fuentes en Canva**: Fraunces, DM Sans, Caveat (todas gratuitas en Canva).
+4. **Si vas a usar foto**, aplicale primero el filtro "Comic Style" en Canva: Editar foto → Estilo → Comic.
 
-- **Modo Atmósfera** — para piezas aspiracionales, frases-mood, portadas. Mucho aire, Cormorant italic, una luna como acento, vacío al 60%.
-- **Modo Editorial-Técnico** — para contenido educativo, anatomía, datos, CTAs. Layout funcional, paleta tierra, sin elementos cosmos, jerarquía clara.
+### Checklist antes de publicar
 
-Mezclar los dos modos en una misma pieza es lo que rompe la marca. Cada pieza elige uno y se compromete.
+- [ ] ¿La pieza está claramente en uno de los tres modos?
+- [ ] ¿Usé máximo 3 colores de la paleta brand?
+- [ ] ¿Las tipografías son Fraunces / DM Sans / Caveat (no otras)?
+- [ ] ¿El texto principal está en marrón cacao (#3D2817), no en negro?
+- [ ] ¿El fondo es crema (#FAF3E7), no blanco puro?
+- [ ] ¿Hay máximo 2 elementos decorativos?
+- [ ] ¿Si hay foto, está filtrada estilo Comic?
+- [ ] ¿El CTA es pill grande con personalidad?
 
-### Por qué Cormorant + Outfit
+### Para escalar
 
-La cuenta actual de Instagram tiene inconsistencia tipográfica fuerte (cada post parece de otra marca). El sistema resuelve esto con dos familias y reglas claras:
-
-- **Cormorant Garamond** (serif editorial) → solo en titulares de marca, citas, frases atmosféricas. Italic permitido. Tracking negativo en tamaños grandes.
-- **Outfit** (sans humanista) → todo lo funcional. Body, UI, navegación, captions, hashtags.
-
-Esta combinación es **coherente con el sistema MSV completo** (Portfolio, Talento Impulsa, NirVana comparten Outfit). Eso vuelve mi sello visible cuando trabajo con clientes.
-
-### Por qué reinterpretamos el cosmos
-
-La marca actual usa constelaciones, lunas y estrellas en abundancia. Visualmente está cargada y se acerca al riesgo new-age. La reinterpretación toma el concepto Nirvana pero lo lleva a **vacío contemplativo + un astro puntual**, más cerca de Aesop o cerámica japonesa que de tarot. Esto:
-
-1. Conecta mejor con público premium-introspectivo (mayor LTV).
-2. Se diferencia más de la competencia.
-3. Es más fácil y barato de producir.
-4. Envejece mejor.
-
-### Por qué la paleta es cálida sin verde
-
-El verde sage es **el color más usado en wellness 2020-2024**. Usarlo es invisibilizarse. La paleta de NirVana se mueve en el eje crema → dorado mostaza → cacao oscuro, con acentos puntuales en moonGold. Esto da:
-
-- Diferenciación inmediata en el feed de Instagram.
-- Coherencia con el universo "cuerpo como camino".
-- Versatilidad para los dos modos (cálida en atmósfera, autoritaria en editorial).
+Cuando aparezcan más piezas, web, flyers, todo arranca de `tokens.json`. No reinventar valores.
 
 ---
 
-## 🚀 Cómo aplicar el sistema en el día a día
+## 📐 Filosofía técnica
 
-### Para crear un post nuevo
-
-1. Decidí el modo (atmósfera o editorial).
-2. Abrí `prompts-para-ia.md` y copiá el prompt correspondiente.
-3. Pegale el bloque de identidad + el prompt en Canva AI / v0 / la herramienta que uses.
-4. Si no usás IA, abrí `design-system.html` y consultá la paleta y tipografía.
-
-### Para revisar una pieza antes de publicar
-
-Checklist rápido:
-- ¿Está claramente en uno de los dos modos? (sino, revisar)
-- ¿La tipografía respeta Cormorant solo en titulares?
-- ¿El fondo es crema cálido (nunca blanco puro)?
-- ¿Hay al menos 50% de aire en la pieza?
-- ¿Hay alguna frase motivacional gritada? (sacar)
-- ¿Hay verdes sage o rosas millennial? (sacar)
-
-### Para escalar a futuro
-
-Cuando aparezca la web, los flyers físicos, los emails, el merchandising — todo arranca de `tokens.json`. No reinventar valores. Si falta algo, agregarlo al token con criterio y actualizar la versión.
-
----
-
-## 📐 Filosofía técnica del sistema
-
-- **Una sola fuente de verdad**: `tokens.json`. El resto se deriva o sincroniza.
-- **Sub-marca como caso de estudio**: NirVana es la primera marca cliente formalizada bajo la metodología de Talento Impulsa Consulting (sub-marcas hermanas con estructura compartida).
-- **Sin frameworks pesados** en el showroom. HTML + CSS + JS vanilla. El sistema vive más allá de la moda de un framework.
-- **Nombre de archivo y nombre de variable predecibles**. Cualquier IA que lea estos archivos puede operar sobre ellos sin contexto adicional.
+- **Una sola fuente de verdad**: `tokens.json`. El resto se deriva.
+- **Sistema sin frameworks pesados**: HTML + CSS vanilla en el mostrador. Sobrevive a la moda.
+- **Compatibilidad Canva**: todas las fuentes y colores están disponibles ahí, sin necesidad de plugins.
 
 ---
 
 ## 🛠️ Roadmap
 
-- [x] v1.0 — Tokens completos, dos modos definidos, mostrador interactivo, prompts para IA
-- [ ] v1.1 — Iconografía propia de línea fina dorada (mínimo 12 íconos base)
-- [ ] v1.2 — Plantillas de Canva con los componentes principales pre-armados
-- [ ] v1.3 — Versión simplificada del logo (isotipo) para usos chicos: WhatsApp, favicon, highlights
-- [ ] v1.4 — Sistema de fotografía: guías de planos, encuadres y luz para la sesión mensual de producción
+- [x] v1.0 — Tokens completos, tres modos definidos, mostrador interactivo, prompts para IA
+- [ ] v1.1 — Plantillas de Canva con los componentes principales pre-armados
+- [ ] v1.2 — Sistema de iconografía custom (ilustraciones a mano alzada)
+- [ ] v1.3 — Fotografía: guías de planos y composiciones para sesión mensual de producción
+- [ ] v1.4 — Versión simplificada del logo (isotipo) para usos chicos
 
 ---
 
 ## 👤 Sobre
 
-**María Soledad Vila** — Vibe Coder & Arquitecta Digital · Fundadora de Talento Impulsa Consulting.
+**María Soledad Vila** — Vibe Coder & Arquitecta Digital · Talento Impulsa Consulting.
 
-Construyo identidades visuales sistematizadas para marcas que quieren escalar sin perder coherencia. NirVana Pilates es el primer cliente formalizado bajo este método.
-
-- 💬 WhatsApp: +54 9 11 6958-0303
-- ✉️ Email: msoledadvila@gmail.com
+Sistema diseñado a partir de la intuición de posicionamiento de la dueña de NirVana, articulada con criterio profesional.
 
 ---
 
-## 📄 Licencia y uso
+## 📄 Licencia
 
-Este design system es **propiedad de NirVana Pilates** para uso exclusivo de la marca. La metodología y la estructura del sistema son de María Soledad Vila / Talento Impulsa Consulting.
-
-No reproducir el sistema completo para otras marcas sin acuerdo previo.
+Sistema propiedad de NirVana Pilates para uso exclusivo de la marca.
